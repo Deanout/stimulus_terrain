@@ -1,0 +1,71 @@
+<div class="container mt-3">
+  <h1>Pages#home</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
+  <%= content_tag(:div, "", data: {
+    controller: "terrain"
+}) do %>
+    <div class="row">
+      <div class="col">
+        <%= content_tag(:input, "Seed", type: "range", min: 0, max: 100000, data: {
+                terrain_target: "seed_input",
+                action: "change->terrain#update"
+            }) %>
+        <%= content_tag(:div, "", data: {
+                terrain_target: "seed_value"
+            }) %>
+      </div>
+      <div class="col">
+        <%= content_tag(:input, "Amplitude", type: "range", min: 0.01, max: 2, step: 0.01, data: {
+                terrain_target: "amplitude_input",
+                action: "change->terrain#update"
+            }) %>
+        <%= content_tag(:div, "", data: {
+                terrain_target: "amplitude_value"
+            }) %>
+      </div>
+      <div class="col">
+        <%= content_tag(:input, "Frequency", type: "range", min: 0.01, max: 2, step: 0.01, data: {
+                terrain_target: "frequency_input",
+                action: "change->terrain#update"
+            }) %>
+        <%= content_tag(:div, "", data: {
+                terrain_target: "frequency_value"
+            }) %>
+      </div>
+      <div class="col">
+        <%= content_tag(:input, "Octaves", type: "range", min: 1, max: 10, data: {
+                terrain_target: "octaves_input",
+                action: "change->terrain#update"
+            }) %>
+        <%= content_tag(:div, "", data: {
+                terrain_target: "octaves_value"
+            }) %>
+      </div>
+      <div class="col">
+        <%= content_tag(:input, "Persistance", type: "range", min: 0.01, max: 2, step: 0.01, data: {
+                terrain_target: "persistence_input",
+                action: "change->terrain#update"
+            }) %>
+        <%= content_tag(:div, "", data: {
+                terrain_target: "persistence_value"
+            }) %>
+      </div>
+      <div class="col">
+        <%= content_tag(:input, "Lacunarity", type: "range", min: 0.01, max: 2, step: 0.01, data: {
+                    terrain_target: "lacunarity_input",
+                    action: "change->terrain#update"
+                }) %>
+        <%= content_tag(:div, "", data: {
+                    terrain_target: "lacunarity_value"
+                }) %>
+      </div>
+    </div>
+    <div class="row">
+      <%= content_tag(:canvas, "", data: {
+        terrain_target: "canvas"
+    }, width: "350", height: "230") %>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
